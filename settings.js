@@ -54,23 +54,23 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.vcardowner = ['201098906252'] //ur owner number
-global.ownername = "𝑬𝑳𝑮𝑨𝒁𝑨𝑹 𝑨𝑳𝑾𝑨𝒁𝑬𝑹🐼🍷 ٫" //ur owner name
+global.vcardowner = ['967770500831'] //ur owner number
+global.ownername = "𝐆𝐎𝐑𝐉𝐄 𝐁𝐎𝐓🐼🍷 ٫" //ur owner name
 global.ytname = "YT: Elgazar" //ur yt chanel name
 global.socialm = "GitHub: Elgazar" //ur github or insta name
 global.location = "Egypt, Cairo, Aizawl" //ur location
 
 //bot bomdy 
-global.owner = ['201098906252']
-global.ownertag = '201098906252' //ur tag number
-global.botname = '𝑩𝑶𝑻 𝑬𝑳𝑮𝑨𝒁𝑨𝑹🐼🍷 ٫' //ur bot name
-global.linkz = "https://youtube.com/channel/UCxVaIay8BccgBtsofagA6_g" //your theme url which will be displayed on whatsapp
-global.websitex = "https://youtube.com/channel/UCxVaIay8BccgBtsofagA6_g" //ur website to be displayed
-global.botscript = 'https://github.com/DGXeon/CheemBt-MD' //script link
-global.reactmoji = "🌚" //ur menu react emoji
-global.themeemoji = "🌞" //ur theme emoji
-global.packname = "⍣ الجزار الوزير يروحي ⍣" //ur sticker watermark packname
-global.author = "⍣ 01098906252 ⍣" //ur sticker watermark author
+global.owner = ['967770500831']
+global.ownertag = '967770500831' //ur tag number
+global.botname = '𝐁𝐎𝐓 𝐑𝐀𝐈𝐙𝐄𝐋🐼🍷 ٫' //ur bot name
+global.linkz = "https://chat.whatsapp.com/Gb62eN2S5yI9mhfdn6Ma4z" //your theme url which will be displayed on whatsapp
+global.websitex = "https://chat.whatsapp.com/Gb62eN2S5yI9mhfdn6Ma4z" //ur website to be displayed
+global.botscript = 'https://chat.whatsapp.com/Gb62eN2S5yI9mhfdn6Ma4z' //script link
+global.reactmoji = "🐦" //ur menu react emoji
+global.themeemoji = "🌚" //ur theme emoji
+global.packname = "رايزل جورج" //ur sticker watermark packname
+global.author = "🔱 𝚁𝚊𝚒𝚣𝚎𝚕 𝙶𝚎𝚘𝚛𝚐𝚎 🔱" //ur sticker watermark author
 
 //Bot theme media
 global.thum = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
@@ -79,7 +79,7 @@ global.err4r = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur error pic
 global.thumb = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
 
 //damtabase
-global.premium = ['201098906252'] //ur premium numbers
+global.premium = ['967770500831'] //ur premium numbers
 global.ntilinkytvid = []
 global.ntilinkytch = []
 global.ntilinkig = []
