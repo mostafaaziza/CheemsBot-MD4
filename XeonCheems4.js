@@ -1567,7 +1567,7 @@ if (isBanChat) return reply(mess.banChat)
                 reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
             }
             break	
-        case 'xo': case 'ttt': case 'tictactoe': {
+        case 'xo': case 'ttt': case 'لعب': {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             let TicTacToe = require("./lib/tictactoe")
@@ -1594,7 +1594,7 @@ if (isBanChat) return reply(mess.banChat)
             9: '9️⃣',
             }[v]
             })
-            let str = `الروم ID: ${room.id}
+            let str = `الغرفه ID: ${room.id}
 
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
@@ -2600,7 +2600,7 @@ if (isBanChat) return reply(mess.banChat)
             reply('Successfully Deleted The Vote Session In This Group')
 	    }
             break
-               case 'group': case 'جروب': {
+               case 'قروب': case 'جروب': {
                	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -3518,7 +3518,7 @@ encmedia = await XeonBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: 
 await fs.unlinkSync(encmedia)
 }
 break
-            case 'sticker': case 's': case 'س': case 'استيكر': {
+            case 'sticker': case 's': case 'س': case 'ملصق': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (/image/.test(mime)) {
@@ -3535,7 +3535,7 @@ reply(`إرسال صورة / فيديو مع شرح ${prefix + command}\nVideo D
 }
 }
 break
-case 'swm': case 'سرقه': case 'سرقة': {
+case 'زرف': case 'سرقه': case 'سرقة': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`مثال :\nswm ${global.author}|${global.packname}`)
@@ -4510,7 +4510,7 @@ case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite'
 						XeonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
-case 'waifu': case 'لولي':
+case 'وايفو': case 'لولي':
 					   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 					reply(mess.wait)
