@@ -8776,8 +8776,8 @@ title:"I deserve something for my hardwork",
 body: "Click to donate", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/8737b098fd5702daeb7e0.jpg',
-sourceUrl: "https://telegra.ph/file/8737b098fd5702daeb7e0.jpg"
+mediaUrl: 'https://telegra.ph/file/e29699aa7b32a802c6d8e.jpg',
+sourceUrl: "https://telegra.ph/file/d5471b971fafb66d06525.jpg"
 }}
 }
 XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -8788,16 +8788,6 @@ case 'alive': case 'القايمه': case 'اوامر': case 'menu': case 'ال�
 if (isBanChat) return reply(mess.banChat)
 XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 	                let btn = [{
-                                urlButton: {
-                                    displayText: 'يوتيوب 🍒',
-                                    url: `${websitex}`
-                                }
-                            }, {
-                                callButton: {
-                                    displayText: 'سكربت 🍜',
-                                    url: `${botscript}`
-                                }
-                            }, {
                                 quickReplyButton: {
                                     displayText: 'كل القائمه 🍱',
                                     id: 'allmenu'
@@ -8826,8 +8816,6 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
                         /////////XeonBotInc.send5ButMsg(m.chat, menulist, global.botname, btn)
                         } else if (setbot.templateDocument) {
                         let buttonmenu = [
-        	{ urlButton: { displayText: `يوتيوب 🍒`, url : `${websitex}` } },
-            { urlButton: { displayText: `سكربت 🍜`, url: `${botscript}` } },
             { quickReplyButton: { displayText: `كل القائمه 🍱`, id: 'allmenu'} },
             { quickReplyButton: { displayText: `قائمه الخيارات 🍢`, id: 'command'} },
             { quickReplyButton: { displayText: `المطور 🐼🍷 ،`, id: 'owner'} }
