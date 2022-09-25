@@ -173,18 +173,16 @@ XeonLft = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeUR
 	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 	            const xmembers = metadata.participants.length
                 let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: XeonWlcm, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-                xeonbody = `┌─❖
-│「 هاي 👋 」
-└┬❖ 「 @${xeonName.split("@")[0]}  」
-   │✑  مرحبا بك في 
-   │✑  ${metadata.subject}
-   │✑  الوصف:
-   │✑ ${metadata.desc}
-   │✑  الرقم : 
-   │✑ ${xmembers}th
-   │✑  الوقت : 
-   │✑ ${xtime} ${xdate}
-   └───────────────┈ ⳹`
+                xeonbody = `
+⋆ هلا يروحي...🥺💜
+@${xeonName.split("@")[0]}
+⋆ نورت جروب 
+ ${metadata.subject}
+ ⋆ نت راجل كبير علي القوانين فخليك مؤدب
+ وبلاش الفاظ خارجه كلنا اخوات وبلاش البرايفت
+ والحك عشان نت كبير مش صغير..😁🔥
+ تم برممجه البوت بواسطه مصطفي العزايزي
+`
       //if you copy the code value,
    //dont forget to put my name(Xeon) as credit
    //you fail to put, i sue you for sure!
@@ -219,21 +217,16 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
                 	let xeonName = num
                     const xeonmembers = metadata.participants.length
                     let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: xeonbuffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-                    xeonbody = `┌─❖
-│「 مع السلامه 👋 」
-└┬❖ 「 @${xeonName.split("@")[0]}  」
-   │✑  غادر 
-   │✑ ${metadata.subject}
-   │✑  الرقم : 
-   │✑ ${xeonmembers}th
-   │✑  الوقت : 
-   │✑  ${xeontime} ${xeondate}
-   └───────────────┈ ⳹`
+                    xeonbody = `
+اخيرا البارد ده غار طلع منجروب
+ @${xeonName.split("@")[0]} 
+يلا الحمدلله غار فدهيا تاخده..😹😹💜🔥
+`
       //if you copy the code value,
    //dont forget to put my name(Xeon) as credit
    //you fail to put, i sue you for sure!
 let buttons = [
-{buttonId: `wkwkwk`, buttonText: {displayText: 'مع السلامه يحب كنت منورنا بوجودك☺️♥🥀'}, type: 1}
+{buttonId: `wkwkwk`, buttonText: {displayText: 'يلا اهو غار في دهيا..😹🔥💃'}, type: 1}
 ]
 let buttonMessage = {
 document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'),
