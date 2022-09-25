@@ -1094,7 +1094,7 @@ const reactionMessage = {
                 const timestampe = speed();
 const latensie = speed() - timestampe
                 const menulist = `
-⋆ ازيك ياروحي..🔥💜 ${pushname} ⋆ 
+⋆ هلا ياروحي..🔥💜 ${pushname} ⋆ 
 
 ⋆ ʷᵉˡᶜᵒᵐᵉ ᵗᵒ ᵗʰᵉ ᵃᶻᵃᶻʸ ˢᵒᵘʳᶜᵉ ⤈⤌
 
@@ -3363,18 +3363,18 @@ case 'listpc': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
-let teks = `     • قائمة الدردشة الشخصية ⋆ \n\nهناك ${anu.length} المستخدمين الذين يستخدمون الروبوت في الدردشة الشخصية`
+let teks = `     • قائمة الدردشة الشخصية ⋆ \n\nهناك ${anu.length} الاحصائيات الذين يستخدمون الروبوت في الدردشة الشخصية`
 for (let i of anu) {
  teks += `\n\nالبروفايل : @${i.id.split('@')[0]}\nالشات : ${i.unreadCount}\nآخر محادثة : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
 }
 XeonBotInc.sendTextWithMentions(m.chat, teks, m)
 }
 break
-case 'المستخدمين': {
+case 'الاحصائيات': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-let teks = `     • محادثه الجروب ⋆ \n\nهناك ${anu.length} المستخدمين الذين يستخدمون الروبوت في الدردشة الجماعية`
+let teks = `     • محادثه الجروب ⋆ \n\nهناك ${anu.length} الاحصائيات الذين يستخدمون الروبوت في الدردشة الجماعية`
 for (let i of anu) {
  let metadata = await XeonBotInc.groupMetadata(i)
  if (metadata.owner === "undefined") {
@@ -8781,147 +8781,74 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
 	if (isBanChat) return reply(mess.banChat)
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
-                    title: `هاي ${pushname}`,
-                    description: `⋆ اختار من القائمه الامر الذي تريده •\n\n`,
+                    title: `⋆ ʷᵉˡᶜᵒᵐᵉ ᵗᵒ ᵗʰᵉ ᵃᶻᵃᶻʸ ˢᵒᵘʳᶜᵉ ⤈⤌`,
+                    description: `⋆ من فضلك اضغط علي الزر لعرض الاوامر •\n`,
                     buttonText: "Menu",
                     footerText: `${global.botname}`,
                     listType: "SINGLE_SELECT",
                     sections: [{
-								"title": "الميزات الأولية للبوت 🦄",
-								"rows": [
-									{
-										"title": "اخر ☕",
-										"description": "يعرض قائمة الميزات الأخرى",
-										"rowId": `${prefix}othermenu`
-									}
-								]
-							},
-							{
-								"title": "بوت سمات ❤️",
-								"rows": [
-									{
-										"title": "كل القائمه 🥀",
-										"description": "يعرض قائمة بجميع الميزات!",
-										"rowId": `${prefix}allmenu`
-									},
-									{
-										"title": "قائمه المالك 💠",
-										"description": "يعرض قائمة ميزات المالك",
+								"title": "⋆ قائمه المالك •",
+										"description": "⋆ يعرض قائمة ميزات المالك •",
 										"rowId": `${prefix}ownermenu`
 										},
 									{
-										"title": "قائمه الجروبات ✨",
-										"description": "يعرض قائمة الميزات الرئيسية",
+										"title": "⋆ اوامر الجروبات •",
+										"description": "⋆ يعرض اوامر الجروب والادمن •",
 										"rowId": `${prefix}groupmenu`
 										},
 										{
-										"title": "قائمه تصميم لوجو 🌈",
-										"description": "يعرض قائمة ميزات صنع الشعار",
-										"rowId": `${prefix}indomenu`
-									},
-									{
-										"title": "قائمه الصوتيات 🎵",
-										"description": "يعرض قائمة ميزات صنع الصوتيات",
+										"title": "⋆ قائمه النغمات •",
+										"description": "⋆ يعرض قائمة الاغاني والنغمات •",
 										"rowId": `${prefix}soundmenu`
 									},
 									{
-										"title": "قائمه التحميل ↘️",
-										"description": "يعرض قائمة ميزات التنزيل",
+										"title": "⋆ اوامر التحميل من المواقع •",
+										"description": "⋆ يعرض قائمة ميزات التنزيل •",
 										"rowId": `${prefix}downloadmenu`
 									},
 									{
-										"title": "قائمه الاستيكر 🃏",
-										"description": "يعرض قائمة ميزات الاستيكر",
-										"rowId": `${prefix}indomenu`
-									},
-									{
-										"title": "قائمه البحث 🔎",
-										"description": "يعرض قائمة ميزات البحث",
+										"title": "⋆ اوامر البحث •",
+										"description": "⋆ يعرض قائمة ميزات البحث •",
 										"rowId": `${prefix}searchmenu`
 									},
 									{
-										"title": "قائمه قرآنيه🤲️",
-										"description": "يعرض قائمة ميزات القرآن",
+										"title": "⋆ قائمه قرآنيه •",
+										"description": "⋆ يعرض قائمة القرآن الكريم •",
 										"rowId": `${prefix}toolmenu`
 									},
 									{
-										"title": "قائمة الصور العشوائية 🌆",
-										"description": "يعرض قائمة ميزات الصورة العشوائية",
+										"title": "⋆ قائمه صور عشوائيه •",
+										"description": "⋆ يعرض قائمة ميزات الصورة العشوائية •",
 										"rowId": `${prefix}randomimagemenu`
 									},
 									{
-										"title": "قائمة تأثير الصورة 🖼️",
-										"description": "يعرض قائمة ميزات تأثير الصورة",
-										"rowId": `${prefix}imageeffectmenu`
-									},
-										{
-											"title": "قائمه انمي عشوائي 😘",
-										"description": "يعرض قائمة ميزات الأنمي العشوائية",
+										"title": "⋆ صور انمي عشوائي •",
+										"description": "⋆ يعرض قائمة ميزات الأنمي العشوائية •",
 										"rowId": `${prefix}animemenu`
 										},
 										{
-											"title": "قائمة الرقص 😀",
-										"description": "يعرض قائمة ميزات التعبيرات",
-										"rowId": `${prefix}emotemenu`
-										},
-										{
-										"title": "قائمه استيكرات انمي ☺️",
-										"description": "يعرض قائمة ميزات ملصقات الرسوم المتحركة",
+											"title": "⋆ قائمه استيكرات انمي •",
+										"description": "⋆ يعرض قائمة ميزات ملصقات الرسوم المتحركة •",
 										"rowId": `${prefix}animestickermenu`
 									     },
 									{
-										"title": "قائمة انمي اباحي 🤓",
-										"description": "يعرض قائمة ميزات Nsfe",
-										"rowId": `${prefix}nsfwmenu`
-									     },
-										{
-											"title": "قائمه المرح 🕺",
+										"title": "⋆ اوامر التسليه •",
 										"description": "يعرض قائمة الميزات الممتعة",
 										"rowId": `${prefix}funmenu`
 										},
 										{
-										"title": "قائمه الالعاب 🎮",
+										"title": "⋆ اوامر الالعاب •",
 										"description": "يعرض قائمة ميزات اللعبة",
 										"rowId": `${prefix}indomenu`
 									},
 										{
-											"title": "قائمه التحويل ⚒️",
-										"description": "يعرض قائمة ميزات التحويل",
+											"title": "⋆ اوامر التحويل •",
+										"description": "⋆ يعرض قائمة ميزات التحويل •",
 										"rowId": `${prefix}convertmenu`
 										},
 										{
-											"title": "قائمه قاعده البيانات ♻️",
-										"description": "يعرض قائمة ميزات قاعدة البيانات",
-										"rowId": `${prefix}databasemenu`
-										},
-										{
-										"title": "قائمه هنديه  🦜",
-										"description": "يعرض قائمة الميزات الهندية",
-										"rowId": `${prefix}indomenu`
-									},
-										{
-											"title": "قائمة الأبراج 🕊️",
-										"description": "يعرض قائمة ميزات الأبراج",
-										"rowId": `${prefix}indohoroscopemenu`
-										}
-								]
-							},
-							{
-								"title": "الدردشة مع زملائك المستخدمين 🌝",
-								"rows": [
-									{
-										"title": "قائمة الدردشة المجهولة 🙎🏻‍♂️",
-										"description": "يعرض قائمة ميزات الدردشة المجهولة",
-										"rowId": `${prefix}anonymousmenu`
-									}
-								]
-							},
-							{
-								"title": "Credit ©️",
-								"rows": [
-									{
-										"title": "قائمه الشكر ❤️",
-										"description": "يعرض قائمة صناع البوت !!",
+											"title": "⋆ السورس •",
+										"description": "⋆ يعرض مبرمج السورس والاصدار •",
 										"rowId": `${prefix}tqtt`
 									}
 								]
@@ -8954,7 +8881,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه المالك
 ⋆  ${prefix}الموقع [text]
 ⋆  ${prefix}ضعهاصوره [image]
 ⋆  ${prefix}تغيرالحقوقxif
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'groupmenu':
 case 'اوامر الجروب':
@@ -9000,7 +8927,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه الجروب
 ⋆ ${prefix}upvote
 ⋆ ${prefix}checkvote
 ⋆ ${prefix}delvote
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'rpgmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9018,7 +8945,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌RPGقائمه ⋆
 ⋆ ${prefix}profile
 ⋆ ${prefix}inventory
 ⋆ ${prefix}leaderboard
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'makermenu':
 case 'اوامر.لوجو':
@@ -9133,7 +9060,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه عمل لو�
 ⋆  ${prefix}halloween
 ⋆  ${prefix}watercolor
 ⋆  ${prefix}classic
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'downloadmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9160,7 +9087,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه التنزي
 ⋆ ${prefix}gitclone [repo link]
 ⋆ ${prefix}soundcloud [url]
 ⋆ ${prefix}zippyshare [url]
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'searchmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9192,7 +9119,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه البحث �
 ⋆ ${prefix}wattpad [query]
 ⋆  ${prefix}mcserver [ip|port]
 ⋆ ${prefix}drakor [query]
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'convertmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9227,7 +9154,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه التحوي
 ⋆ ${prefix}روبوت [reply aud]
 ⋆ ${prefix}بطئ [reply aud]
 ⋆ ${prefix}squirrel [reply aud]
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'randomimagemenu':
 	   if (isBan) return reply(mess.ban)
@@ -9246,7 +9173,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه صور عش�
 ⋆ ${prefix}wallcode
 ⋆ ${prefix}animewall [query]
 ⋆ ${prefix}animewall2 [query]
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 
 case 'emotemenu':
@@ -9266,7 +9193,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه تحويل �
 ⋆ ${prefix}googleemoji
 ⋆ ${prefix}pediaemoji
 ⋆ ${prefix}microsoftemoji
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'imageeffectmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9287,7 +9214,7 @@ await XeonBotInc.send5ButImg(from, `╔═════✪• قائمه افكت
 ⋆ ${prefix}beautifuleffect
 ⋆ ${prefix}deleteeffect
 ⋆ ${prefix}pixelate
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'animemenu':
 	   if (isBan) return reply(mess.ban)
@@ -9341,7 +9268,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه انمي ⋆
 ⋆ ${prefix}megumin2
 ⋆ ${prefix}لولي
 ⋆ ${prefix}couplepp
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'stickermenu':
 	   if (isBan) return reply(mess.ban)
@@ -9355,7 +9282,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه استيكر
 ⋆  ${prefix}ttp
 ⋆  ${prefix}كلب
 ⋆  ${prefix}lovesticker
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'animestickermenu':
 	   if (isBan) return reply(mess.ban)
@@ -9391,7 +9318,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه استيكر
 ⋆ ${prefix}cringe
 ⋆ ${prefix}neko
 ⋆ ${prefix}gura
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'nsfwmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9423,7 +9350,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه انمي ا�
 ⋆ ${prefix}spank
 ⋆ ${prefix}hneko
 ⋆ ${prefix}nwaifu
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'funmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9482,7 +9409,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه التسلي
 ⋆  ${prefix}معرص
 ⋆  ${prefix}شرموط
 ⋆  ${prefix}اهطل
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'soundmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9650,7 +9577,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه صوتيات
 ⋆  ${prefix}sound159
 ⋆  ${prefix}sound160
 ⋆  ${prefix}sound161
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'gamemenu':
 	   if (isBan) return reply(mess.ban)
@@ -9664,7 +9591,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه الالعا
 ⋆  ${prefix}guess [option]
 ⋆  ${prefix}math [mode]
 ⋆  ${prefix}suitpvp [tag]
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'anonymousmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9675,7 +9602,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه شات مج�
 ⋆ ${prefix}start
 ⋆ ${prefix}next
 ⋆ ${prefix}leave
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'toolmenu':
 case 'قران':
@@ -9709,7 +9636,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه القرآن
 ⋆  ${prefix}سوره التوبه
 ⋆  ${prefix}سوره القصص
 ⋆  ${prefix}سوره النور
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'databasemenu':
 	   if (isBan) return reply(mess.ban)
@@ -9724,7 +9651,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه قاعده �
 ⋆  ${prefix}listmsg
 ⋆  ${prefix}getmsg
 ⋆  ${prefix}delmsg
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'indomenu':
 	   if (isBan) return reply(mess.ban)
@@ -9755,7 +9682,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه هنديه �
 ⋆ ${prefix}covidindo
 ⋆ ${prefix}earthquake
 ⋆ ${prefix}tvschedule
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'indohoroscopemenu':
 	   if (isBan) return reply(mess.ban)
@@ -9792,7 +9719,7 @@ await XeonBotInc.send5ButImg(from, `╔═✪• قائمه ابراج الهن�
 ⋆ ${prefix}masasubur
 ⋆ ${prefix}zodiak
 ⋆ ${prefix}shio
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'othermenu':
 	   if (isBan) return reply(mess.ban)
@@ -9818,7 +9745,7 @@ await XeonBotInc.send5ButImg(from, `اهلا بك في⤌قائمه المالك
 ⋆  ${prefix}donate
 ⋆  ${prefix}request
 ⋆  ${prefix}report [bug]
-🖤   ̶ ̶ ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶ ̶ ̶ ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
+🖤   ̶  ̶❁ ̶ ̶ ̶a̶l̶̶a̶z̶i̶z̶y̶ ̶  ̶❁ ̶  ̶ ̶ ̶ 🖤` + '' + ' ', `${botname}`,unicorn, [{"quickReplyButton": {"displayText": "⋆ المبرمج •","id": 'owner'}}] )
 break
 case 'tqtt': 
 case 'السورس': 
