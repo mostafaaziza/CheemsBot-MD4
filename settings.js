@@ -63,14 +63,14 @@ global.location = "Egypt, Cairo, Aizawl" //ur location
 //bot bomdy 
 global.owner = ['17036660410']
 global.ownertag = '17036660410' //ur tag number
-global.botname = 'بوت العزايزي' //ur bot name
-global.linkz = "https://chat.whatsapp.com/JTV3jYHF2li9JCOSjFTQeN" //your theme url which will be displayed on whatsapp
-global.websitex = "https://chat.whatsapp.com/JTV3jYHF2li9JCOSjFTQeN" //ur website to be displayed
-global.botscript = 'https://chat.whatsapp.com/JTV3jYHF2li9JCOSjFTQeN' //script link
+global.botname = 'iz abdelghani' //ur bot name
+global.linkz = "https://chat.whatsapp.com/LBPtB2AfFgq974bnbTC1RV" //your theme url which will be displayed on whatsapp
+global.websitex = "https://chat.whatsapp.com/LBPtB2AfFgq974bnbTC1RV" //ur website to be displayed
+global.botscript = 'https://chat.whatsapp.com/LBPtB2AfFgq974bnbTC1RV' //script link
 global.reactmoji = "🐦" //ur menu react emoji
 global.themeemoji = "🌚" //ur theme emoji
-global.packname = "مصطفي العزايزي" //ur sticker watermark packname
-global.author = "mostafa mhamed" //ur sticker watermark author
+global.packname = "iz abdelghani" //ur sticker watermark packname
+global.author = "iz abdelghani" //ur sticker watermark author
 
 //Bot theme media
 global.thum = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
